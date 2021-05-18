@@ -46,7 +46,7 @@ func main() {
 
 	// New Service
 	service := micro.NewService(
-		micro.Name("top.hjlinfo.mall..cartApi"),
+		micro.Name("top.hjlinfo.mall.cartApi"),
 		micro.Version("latest"),
 		micro.Address("0.0.0.0:8086"),
 		//添加 consul 注册中心
@@ -62,7 +62,7 @@ func main() {
 	// Initialise service
 	service.Init()
 
-	cartService := cartPb.NewCartService("top.hjlinfo.mall..cart", service.Client())
+	cartService := cartPb.NewCartService("top.hjlinfo.mall.cart", service.Client())
 
 	cartService.AddCart(context.TODO(), &cartPb.CartInfo{
 

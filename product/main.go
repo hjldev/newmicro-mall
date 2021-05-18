@@ -6,7 +6,7 @@ import (
 	"github.com/asim/go-micro/v3"
 	log "github.com/asim/go-micro/v3/logger"
 	"github.com/asim/go-micro/v3/registry"
-	"github.com/hjldev/newmicro-mall/product/common"
+	"github.com/hjldev/newmicro-mall/common"
 	"github.com/hjldev/newmicro-mall/product/domain/repository"
 	service2 "github.com/hjldev/newmicro-mall/product/domain/service"
 	"github.com/hjldev/newmicro-mall/product/handler"
@@ -30,7 +30,7 @@ func main() {
 	})
 
 	//链路追踪
-	t, io, err := common.NewTracer("product", "127.0.0.1:6831")
+	t, io, err := common.NewTracer("top.hjlinfo.mall.product", "127.0.0.1:6831")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -53,7 +53,7 @@ func main() {
 
 	// 设置服务
 	service := micro.NewService(
-		micro.Name("product"),
+		micro.Name("top.hjlinfo.mall.product"),
 		micro.Version("latest"),
 		micro.Address("127.0.0.1:8085"),
 		//添加注册中心

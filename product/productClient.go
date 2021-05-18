@@ -7,7 +7,7 @@ import (
 	opentracing2 "github.com/asim/go-micro/plugins/wrapper/trace/opentracing/v3"
 	"github.com/asim/go-micro/v3"
 	"github.com/asim/go-micro/v3/registry"
-	"github.com/hjldev/newmicro-mall/product/common"
+	"github.com/hjldev/newmicro-mall/common"
 	"github.com/hjldev/newmicro-mall/product/proto/product"
 	"github.com/opentracing/opentracing-go"
 	"log"
@@ -21,7 +21,7 @@ func main() {
 		}
 	})
 	//链路追踪
-	t, io, err := common.NewTracer("client", "localhost:6831")
+	t, io, err := common.NewTracer("top.hjlinfo.mall.client", "localhost:6831")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -29,7 +29,7 @@ func main() {
 	opentracing.SetGlobalTracer(t)
 
 	service := micro.NewService(
-		micro.Name("client"),
+		micro.Name("top.hjlinfo.mall.client"),
 		micro.Version("latest"),
 		micro.Address("127.0.0.1:8085"),
 		//添加注册中心
@@ -38,7 +38,7 @@ func main() {
 		micro.WrapClient(opentracing2.NewClientWrapper(opentracing.GlobalTracer())),
 	)
 
-	productService := product.NewProductService("product", service.Client())
+	productService := product.NewProductService("top.hjlinfo.mall.product", service.Client())
 
 	productAdd := &product.ProductInfo{
 		ProductName:        "imooc",

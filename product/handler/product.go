@@ -3,7 +3,7 @@ package handler
 import (
 	"context"
 	"fmt"
-	"github.com/hjldev/newmicro-mall/product/common"
+	"github.com/hjldev/newmicro-mall/common"
 	"github.com/hjldev/newmicro-mall/product/domain/model"
 	"github.com/hjldev/newmicro-mall/product/domain/service"
 	. "github.com/hjldev/newmicro-mall/product/proto/product"

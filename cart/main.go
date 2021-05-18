@@ -7,11 +7,11 @@ import (
 	"github.com/asim/go-micro/v3"
 	log "github.com/asim/go-micro/v3/logger"
 	"github.com/asim/go-micro/v3/registry"
-	"github.com/hjldev/newmicro-mall/cart/common"
 	"github.com/hjldev/newmicro-mall/cart/domain/repository"
 	service2 "github.com/hjldev/newmicro-mall/cart/domain/service"
 	"github.com/hjldev/newmicro-mall/cart/handler"
 	"github.com/hjldev/newmicro-mall/cart/proto/cart"
+	"github.com/hjldev/newmicro-mall/common"
 	"github.com/opentracing/opentracing-go"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -33,7 +33,7 @@ func main() {
 	})
 
 	//链路追踪
-	t, io, err := common.NewTracer("cart", "localhost:6831")
+	t, io, err := common.NewTracer("top.hjlinfo.mall.cart", "localhost:6831")
 	if err != nil {
 		log.Error(err)
 	}
@@ -57,7 +57,7 @@ func main() {
 
 	// New Service
 	service := micro.NewService(
-		micro.Name("cart"),
+		micro.Name("top.hjlinfo.mall.cart"),
 		micro.Version("latest"),
 		//暴露的服务地址
 		micro.Address("0.0.0.0:8087"),

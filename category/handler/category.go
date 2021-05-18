@@ -2,10 +2,10 @@ package handler
 
 import (
 	"context"
-	"github.com/hjldev/newmicro-mall/category/common"
 	"github.com/hjldev/newmicro-mall/category/domain/model"
 	"github.com/hjldev/newmicro-mall/category/domain/service"
-	category "github.com/hjldev/newmicro-mall/category/proto/category"
+	"github.com/hjldev/newmicro-mall/category/proto/category"
+	"github.com/hjldev/newmicro-mall/common"
 	"github.com/prometheus/common/log"
 )
 

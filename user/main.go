@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	server.Init(server.Name("user"))
+	server.Init(server.Name("top.hjlinfo.mall.user"))
 
 	dsn := "root:123456@tcp(127.0.0.1:3306)/newmicro?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})

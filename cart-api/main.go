@@ -11,10 +11,10 @@ import (
 	"github.com/asim/go-micro/v3/client"
 	log "github.com/asim/go-micro/v3/logger"
 	"github.com/asim/go-micro/v3/registry"
-	"github.com/hjldev/newmicro-mall/cart-api/common"
 	"github.com/hjldev/newmicro-mall/cart-api/handler"
 	"github.com/hjldev/newmicro-mall/cart-api/proto/cartApi"
 	cartPb "github.com/hjldev/newmicro-mall/cart/proto/cart"
+	"github.com/hjldev/newmicro-mall/common"
 	"github.com/opentracing/opentracing-go"
 	"net"
 	"net/http"
@@ -29,7 +29,7 @@ func main() {
 	})
 
 	//链路追踪
-	t, io, err := common.NewTracer("go.micro.api.cartApi", "localhost:6831")
+	t, io, err := common.NewTracer("top.hjlinfo.mall.cartApi", "localhost:6831")
 	defer io.Close()
 	opentracing.SetGlobalTracer(t)
 
@@ -46,7 +46,7 @@ func main() {
 
 	// New Service
 	service := micro.NewService(
-		micro.Name("go.micro.api.cartApi"),
+		micro.Name("top.hjlinfo.mall..cartApi"),
 		micro.Version("latest"),
 		micro.Address("0.0.0.0:8086"),
 		//添加 consul 注册中心
@@ -62,7 +62,7 @@ func main() {
 	// Initialise service
 	service.Init()
 
-	cartService := cartPb.NewCartService("go.micro.service.cart", service.Client())
+	cartService := cartPb.NewCartService("top.hjlinfo.mall..cart", service.Client())
 
 	cartService.AddCart(context.TODO(), &cartPb.CartInfo{
 

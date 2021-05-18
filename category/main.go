@@ -5,11 +5,11 @@ import (
 	"github.com/asim/go-micro/v3"
 	log "github.com/asim/go-micro/v3/logger"
 	"github.com/asim/go-micro/v3/registry"
-	"github.com/hjldev/newmicro-mall/category/common"
 	"github.com/hjldev/newmicro-mall/category/domain/repository"
 	service2 "github.com/hjldev/newmicro-mall/category/domain/service"
 	"github.com/hjldev/newmicro-mall/category/handler"
 	"github.com/hjldev/newmicro-mall/category/proto/category"
+	"github.com/hjldev/newmicro-mall/common"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -29,7 +29,7 @@ func main() {
 
 	// New Service
 	service := micro.NewService(
-		micro.Name("category"),
+		micro.Name("top.hjlinfo.mall.category"),
 		micro.Version("latest"),
 		//这里设置地址和需要暴露的端口
 		micro.Address("127.0.0.1:8082"),

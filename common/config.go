@@ -6,6 +6,15 @@ import (
 	"strconv"
 )
 
+// consul配置中心
+const ConsulUrl = "127.0.0.1"
+const ConsulPort = 8500
+const ConsultConfigPrefix = "/micro/config"
+
+func GetDefaultConsulConfig() (config.Config, error) {
+	return GetConsulConfig(ConsulUrl, ConsulPort, ConsultConfigPrefix)
+}
+
 //设置配置中心
 func GetConsulConfig(host string, port int64, prefix string) (config.Config, error) {
 	//添加配置中心

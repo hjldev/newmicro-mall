@@ -1,6 +1,6 @@
 module github.com/hjldev/newmicro-mall/cart-api
 
-go 1.16
+go 1.15
 
 require (
 	github.com/afex/hystrix-go v0.0.0-20180502004556-fa1af6a1f4f5
@@ -14,4 +14,9 @@ require (
 	github.com/opentracing/opentracing-go v1.2.0
 	github.com/prometheus/common v0.24.0
 	google.golang.org/protobuf v1.26.0
+)
+
+replace (
+	github.com/hjldev/newmicro-mall/cart => ../cart
+	github.com/hjldev/newmicro-mall/common => ../common
 )

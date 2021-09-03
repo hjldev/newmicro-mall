@@ -1,6 +1,6 @@
 module github.com/hjldev/newmicro-mall/cart
 
-go 1.16
+go 1.15
 
 require (
 	github.com/asim/go-micro/plugins/registry/consul/v3 v3.0.0-20210517071652-f48911d2c3ef
@@ -14,3 +14,5 @@ require (
 	gorm.io/driver/mysql v1.1.0
 	gorm.io/gorm v1.21.10
 )
+
+replace github.com/hjldev/newmicro-mall/common => ../common

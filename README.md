@@ -11,9 +11,16 @@ github.com/asim/go-micro/v3
 
 #### 项目结构
 
-- 服务名称: 
-- 类型: service
-- 简称: order
+``` lua
+newmicro-mall
+├── cart -- 购物车服务
+├── cart-api -- 前端调用购物车接口
+├── category -- 商品分类模块服务
+├── common -- 公共方法
+├── order -- 订单模块服务
+├── product -- 商品模块服务
+└── user -- 用户模块服务
+```
 
 
 #### 使用

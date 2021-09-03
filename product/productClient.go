@@ -41,10 +41,10 @@ func main() {
 	productService := product.NewProductService("top.hjlinfo.mall.product", service.Client())
 
 	productAdd := &product.ProductInfo{
-		ProductName:        "imooc",
+		ProductName:        "mall",
 		ProductSku:         "cap",
 		ProductPrice:       1.1,
-		ProductDescription: "imooc-cap",
+		ProductDescription: "mall-cap",
 		ProductCategoryId:  1,
 		ProductImage: []*product.ProductImage{
 			{

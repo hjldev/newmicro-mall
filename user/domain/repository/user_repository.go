@@ -26,7 +26,7 @@ type UserRepository struct {
 
 func (u *UserRepository) FindUserByName(name string) (user *model.User, err error) {
 	user = &model.User{}
-	return user, u.mysqlDb.Where("user_name = ?", name).Find(user).Error
+	return user, u.mysqlDb.Where("login_name = ?", name).Find(user).Error
 }
 
 func (u *UserRepository) FindUserId(id int64) (user *model.User, err error) {

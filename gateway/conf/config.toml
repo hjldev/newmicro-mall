@@ -1,0 +1,10 @@
+[[service]]
+name = "http_mall"
+rule_type = 0   #匹配类型 0=url前缀url_prefix 1=域名domain
+rule = "/http_mall" #请求路径
+checkTimeout = 2    #检查时间
+checkInterval = 5   #检查间隔
+roundType = 2  #轮询方式 0=random 1=round-robin 2=weight_round-robin 3=ip_hash
+ipList = "127.0.0.1:2003,127.0.0.1:2004"    #负载均衡服务器列表
+weightList = "50,50"    #每台服务器请求权重
+needStripUri = 1    #是否需要移除前缀请求
